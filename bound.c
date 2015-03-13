@@ -67,8 +67,8 @@ static void err(const char* error) {
  */
 
 static void copyFile(const char* src, const char* dest) {
-    char command[strlen(src) + strlen(dest) + 5];
-    sprintf(command, "cp %s %s", src, dest);
+    char command[strlen(src) + strlen(dest) + 9];
+    sprintf(command, "cp \"%s\" \"%s\"", src, dest);
     system(command); // prone to injection attacks
 }
 
